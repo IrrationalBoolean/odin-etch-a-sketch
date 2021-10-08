@@ -1,4 +1,3 @@
-const container = document.querySelector('.container')
 
 function changeTile(){
   this.classList.toggle("alt")
@@ -12,6 +11,7 @@ function resetBoard(){
 }
 
 function makeBoxes(num){
+  container = document.querySelector('.container')
   for (i = 0; i < num; i++) {
     for (j = 0; j < num; j++) {
 
@@ -44,4 +44,14 @@ function makeBoard(num){
   styleBoxes(num)
 }
 
-makeBoard(parseInt(prompt('How big a board?')))
+function resetPrompt(){
+  edge = parseInt(prompt('How many boxes wide?'))
+  if (edge > 100) {
+    edge = 100
+  }
+
+  makeBoard(edge)
+}
+
+
+makeBoard(10)

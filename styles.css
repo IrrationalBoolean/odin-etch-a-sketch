@@ -1,5 +1,4 @@
 * {
-  background-color: black;
   margin: 0;
 }
 
@@ -21,9 +20,18 @@ body {
   background-color: red;
   width: 6.25%;
   box-sizing: border-box;
-  border: solid black 1px;
+  border: solid rgba(255,255,255,.15) 1px;
 }
 
+.settings {
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: white;
+}
 
 .alt {
   background-color: green;
