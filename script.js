@@ -4,6 +4,15 @@ function changeTile(){
   this.classList.toggle("alt")
 }
 
+function resetBoard(){
+  active = document.getElementsByClassName('alt')
+  for (i=0; i < active.length;){
+    active[i].classList.remove('alt')
+  }
+}
+
+
+
 
 
 
