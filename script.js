@@ -11,7 +11,7 @@ function resetBoard(){
   }
 }
 
-function makeBoard(num){
+function makeBoxes(num){
   for (i = 0; i < num; i++) {
     for (j = 0; j < num; j++) {
 
@@ -22,9 +22,26 @@ function makeBoard(num){
       container.appendChild(box)
     }
   }
+}
+
+function styleBoxes(num){
   divs = document.getElementsByClassName('box')
   for (i=0; i < divs.length; i++){
     divs[i].style.width = `${100 / num}%`
   }
 }
-makeBoard(25)
+
+function removeBoxes(){
+  divs = document.getElementsByClassName('box')
+  while (0 < divs.length){
+    divs[0].remove()
+  }
+}
+
+function makeBoard(num){
+  removeBoxes()
+  makeBoxes(num)
+  styleBoxes(num)
+}
+
+makeBoard(parseInt(prompt('How big a board?')))
