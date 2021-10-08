@@ -11,19 +11,20 @@ function resetBoard(){
   }
 }
 
+function makeBoard(num){
+  for (i = 0; i < num; i++) {
+    for (j = 0; j < num; j++) {
 
+      const box = document.createElement('div')
 
-
-
-
-for (i = 0; i < 16; i++) {
-  for (j = 0; j < 16; j++) {
-
-    const box = document.createElement('div')
-
-    box.classList.add('box')
-    box.addEventListener('mouseover', changeTile)
-    container.appendChild(box)
+      box.classList.add('box')
+      box.addEventListener('mouseover', changeTile)
+      container.appendChild(box)
+    }
+  }
+  divs = document.getElementsByClassName('box')
+  for (i=0; i < divs.length; i++){
+    divs[i].style.width = `${100 / num}%`
   }
 }
-
+makeBoard(25)
